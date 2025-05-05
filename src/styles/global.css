@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "sans-serif";
+  --font-jetbrains: "JetBrains Mono Variable", monospace;
+  --color-background: rgba(15, 23, 42, 1);
+  --color-text: oklch(92.61% 0.005 286.29);
+  --color-primary: oklch(72.36% 0.091 284.62);
+  --color-secondary: oklch(30.81% 0.164 272.13);
+  --color-accent: oklch(44.31% 0.289 266.44);
+}

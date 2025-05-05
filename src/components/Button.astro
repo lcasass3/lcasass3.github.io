@@ -1,0 +1,21 @@
+---
+interface Props {
+  text: string;
+  variant?: "primary" | "secondary";
+}
+const { text, variant = "primary" } = Astro.props;
+
+const stylesMap = {
+  primary:
+    "outline-1 outline-primary hover:bg-primary/80 transition-colors ease-in-out duration-300",
+  secondary: "",
+};
+---
+
+<button
+  type="button"
+  class={"flex py-4 px-8 w-fit rounded-md mt-2 cursor-pointer text-lg " +
+    stylesMap[variant]}
+>
+  {text}</button
+>
