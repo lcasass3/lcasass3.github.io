@@ -14,8 +14,9 @@ const stylesMap = {
 
 <button
   type="button"
-  class={"flex py-4 px-8 w-fit rounded-md mt-2 cursor-pointer text-lg " +
+  class={"flex items-center py-4 px-8 w-fit rounded-md mt-2 cursor-pointer text-lg " +
     stylesMap[variant]}
 >
-  {text}</button
->
+  <slot />
+  {text}
+</button>
