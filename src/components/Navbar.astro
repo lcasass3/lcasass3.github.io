@@ -1,0 +1,34 @@
+---
+import UserIcon from "./icons/User.astro";
+import BriefcaseIcon from "./icons/Briefcase.astro";
+import CodeIcon from "./icons/Code.astro";
+import MailIcon from "./icons/Mail.astro";
+import GithubIcon from "./icons/Github.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+
+import Route from "./navbar/Route.astro";
+import type { RouteDTO } from "../types/RouteDTO";
+
+const routes: RouteDTO[] = [
+  { route: "/about", icon: UserIcon },
+  { route: "/experience", icon: BriefcaseIcon },
+  { route: "/jobs", icon: CodeIcon },
+  { route: "/contact", icon: MailIcon },
+];
+const contactRoutes: RouteDTO[] = [
+  { route: "", icon: GithubIcon },
+  { route: "", icon: LinkedinIcon },
+];
+---
+
+<nav
+  class="bg-background border-r border-r-primary/80 w-1/12 h-full left-0 relative py-20 flex flex-col justify-between"
+>
+  <ul class="grid w-full justify-center gap-y-16">
+    {routes.map((route) => <Route route={route} />)}
+  </ul>
+
+  <ul class="grid w-full justify-center gap-y-16 bottom-0">
+    {contactRoutes.map((route) => <Route route={route} />)}
+  </ul>
+</nav>

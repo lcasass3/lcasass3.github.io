@@ -1,0 +1,14 @@
+---
+import type { RouteDTO } from "../../types/RouteDTO";
+
+interface Props {
+  route: RouteDTO;
+}
+const { route } = Astro.props;
+---
+
+<li class="cursor-pointer">
+  <route.icon
+    class="size-6 text-text hover:text-primary transition-colors ease-in-out duration-200"
+  />
+</li>
