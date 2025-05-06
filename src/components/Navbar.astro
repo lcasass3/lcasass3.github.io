@@ -10,14 +10,17 @@ import Route from "./navbar/Route.astro";
 import type { RouteDTO } from "../types/RouteDTO";
 
 const routes: RouteDTO[] = [
-  { route: "/about", icon: UserIcon },
-  { route: "/experience", icon: BriefcaseIcon },
-  { route: "/jobs", icon: CodeIcon },
-  { route: "/contact", icon: MailIcon },
+  { path: "/about", icon: UserIcon },
+  { path: "/experience", icon: BriefcaseIcon },
+  { path: "/jobs", icon: CodeIcon },
+  { path: "/contact", icon: MailIcon },
 ];
 const contactRoutes: RouteDTO[] = [
-  { route: "", icon: GithubIcon },
-  { route: "", icon: LinkedinIcon },
+  { path: "https://github.com/lcasass3", icon: GithubIcon },
+  {
+    path: "https://www.linkedin.com/in/leon-casas-187504266/",
+    icon: LinkedinIcon,
+  },
 ];
 ---
 

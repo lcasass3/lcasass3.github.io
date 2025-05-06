@@ -1,4 +1,4 @@
 export type RouteDTO = {
-  route: string;
+  path: string;
   icon: (_props: Record<string, any>) => any;
 };
