@@ -10,28 +10,29 @@ import Route from "./navbar/Route.astro";
 import type { RouteDTO } from "../types/RouteDTO";
 
 const routes: RouteDTO[] = [
-  { path: "/about", icon: UserIcon },
-  { path: "/experience", icon: BriefcaseIcon },
-  { path: "/jobs", icon: CodeIcon },
-  { path: "/contact", icon: MailIcon },
+  { path: "/#about", label: "about-me", icon: UserIcon },
+  { path: "/#experience", label: "experience", icon: BriefcaseIcon },
+  { path: "/#jobs", label: "jobs", icon: CodeIcon },
+  { path: "/#contact", label: "contact", icon: MailIcon },
 ];
 const contactRoutes: RouteDTO[] = [
-  { path: "https://github.com/lcasass3", icon: GithubIcon },
+  { path: "https://github.com/lcasass3", label: "github", icon: GithubIcon },
   {
     path: "https://www.linkedin.com/in/leon-casas-187504266/",
+    label: "linkedIn",
     icon: LinkedinIcon,
   },
 ];
 ---
 
 <nav
-  class="bg-background border-r border-r-primary/80 w-1/12 h-full left-0 relative py-20 flex flex-col justify-between"
+  class="bg-background border-r-primary/80 relative left-0 flex h-full w-[5%] flex-col justify-between border-r py-20"
 >
   <ul class="grid w-full justify-center gap-y-16">
     {routes.map((route) => <Route route={route} />)}
   </ul>
 
-  <ul class="grid w-full justify-center gap-y-16 bottom-0">
+  <ul class="bottom-0 grid w-full justify-center gap-y-16">
     {contactRoutes.map((route) => <Route route={route} />)}
   </ul>
 </nav>

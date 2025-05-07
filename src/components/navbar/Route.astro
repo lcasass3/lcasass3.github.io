@@ -8,9 +8,9 @@ const { route } = Astro.props;
 ---
 
 <li class="cursor-pointer">
-  <a href={route.path}>
+  <a href={route.path} aria-label={route.label}>
     <route.icon
-      class="size-6 text-text hover:text-primary transition-colors ease-in-out duration-200"
+      class="text-text hover:text-primary size-6 transition-colors duration-200 ease-in-out"
     />
   </a>
 </li>

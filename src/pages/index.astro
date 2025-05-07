@@ -4,21 +4,21 @@ import Navbar from "../components/Navbar.astro";
 import ChevronDownIcon from "../components/icons/ChevronDown.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+import About from "./about.astro";
 ---
 
 <Layout>
-  <main class="overflow-auto w-full h-full flex space-x-24">
-    <Navbar />
+  <main class="grow overflow-auto">
     <section
-      class="tracking-wide space-y-3 w-full h-full flex flex-col justify-center-safe relative"
+      class="flex h-full w-full flex-col justify-center-safe space-y-3 p-24 tracking-wide"
     >
       <p class="font-jetbrains text-primary text-xl">Hi, my name is</p>
       <h1 class="font-jetbrains text-7xl font-bold">Leon Casas</h1>
       <!-- TODO: Add a component w typing animation -->
-      <p class="font-jetbrains text-5xl font-bold text-primary">
+      <p class="font-jetbrains text-primary text-5xl font-bold">
         I build things for the web.
       </p>
-      <h2 class="text-text font-medium break-normal w-1/2 text-xl mt-2">
+      <h2 class="text-text mt-2 w-1/2 text-xl font-medium break-normal">
         I'm a software engineer specializing in building exceptional digital
         experiences. Currently, I'm focused on creating accessible,
         human-centered products.
@@ -26,7 +26,7 @@ import "../styles/global.css";
 
       <Button text="Check out my work">
         <ChevronDownIcon
-          class="mr-3 text-primary group-hover:text-white transition-all ease-in-out duration-300"
+          class="text-primary mr-3 transition-all duration-300 ease-in-out group-hover:text-white"
         />
       </Button>
     </section>
