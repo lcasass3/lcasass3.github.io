@@ -1,7 +1,8 @@
 ---
-import Image from "astro/components/Image.astro";
 import Badge from "./Badge.astro";
 import CaretRight from "./icons/CaretRight.astro";
+import Section from "./Section.astro";
+import SectionTitle from "./SectionTitle.astro";
 
 const STACK = [
   "Javascript (ES6+)",
@@ -23,12 +24,9 @@ const ROLES = [
 ];
 ---
 
-<section class="text-text flex h-full w-full p-24">
+<Section class="flex">
   <div class="flex w-1/2 flex-col justify-center-safe">
-    <h2 class="font-jetbrains mb-10 text-5xl">
-      <span class="text-primary font-black">//</span>
-      About me
-    </h2>
+    <SectionTitle>About me</SectionTitle>
 
     <p class="text-lg leading-7 text-pretty">
       Hello! I&apos;m Leon, a Full Stack Developer with 2+ years of hands&#45;on
@@ -82,4 +80,4 @@ const ROLES = [
       class="outline-primary size-1/2 scale-none rounded-full bg-auto outline-4 outline-offset-4"
     />
   </div>
-</section>
+</Section>
