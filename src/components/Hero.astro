@@ -1,11 +1,10 @@
 ---
 import Button from "./Button.astro";
 import ChevronDownIcon from "../components/icons/ChevronDown.astro";
+import Section from "./Section.astro";
 ---
 
-<section
-  class="flex h-full w-full flex-col justify-center-safe space-y-3 p-24 tracking-wide"
->
+<Section class="flex flex-col justify-center-safe space-y-3 tracking-wide">
   <p class="font-jetbrains text-primary text-xl">Hi, my name is</p>
   <h1 class="font-jetbrains text-7xl font-bold">Leon Casas</h1>
 
@@ -24,4 +23,4 @@ import ChevronDownIcon from "../components/icons/ChevronDown.astro";
       class="text-primary mr-3 transition-all duration-300 ease-in-out group-hover:text-white"
     />
   </Button>
-</section>
+</Section>
