@@ -9,13 +9,13 @@ import LinkedinIcon from "./icons/Linkedin.astro";
 import Route from "./navbar/Route.astro";
 import type { RouteDTO } from "../types/RouteDTO";
 
-const routes: RouteDTO[] = [
+const ROUTES: RouteDTO[] = [
   { path: "/#about", label: "about-me", icon: UserIcon },
   { path: "/#experience", label: "experience", icon: BriefcaseIcon },
   { path: "/#jobs", label: "jobs", icon: CodeIcon },
   { path: "/#contact", label: "contact", icon: MailIcon },
 ];
-const contactRoutes: RouteDTO[] = [
+const CONTACT_ROUTES: RouteDTO[] = [
   { path: "https://github.com/lcasass3", label: "github", icon: GithubIcon },
   {
     path: "https://www.linkedin.com/in/leon-casas-187504266/",
@@ -26,13 +26,13 @@ const contactRoutes: RouteDTO[] = [
 ---
 
 <nav
-  class="bg-background border-r-primary/80 relative left-0 flex h-full w-[5%] flex-col justify-between border-r py-20"
+  class="bg-background border-r-primary/80 relative left-0 flex h-full flex-col justify-between border-r px-8 py-20"
 >
   <ul class="grid w-full justify-center gap-y-16">
-    {routes.map((route) => <Route route={route} />)}
+    {ROUTES.map((route) => <Route route={route} />)}
   </ul>
 
   <ul class="bottom-0 grid w-full justify-center gap-y-16">
-    {contactRoutes.map((route) => <Route route={route} />)}
+    {CONTACT_ROUTES.map((route) => <Route route={route} />)}
   </ul>
 </nav>
