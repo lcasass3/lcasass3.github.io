@@ -1,32 +1,15 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
-import ChevronDownIcon from "../components/icons/ChevronDown.astro";
+import CaretRight from "../components/icons/CaretRight.astro";
+import Hero from "../components/Hero.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout>
   <main class="grow overflow-auto">
-    <section
-      class="flex h-full w-full flex-col justify-center-safe space-y-3 p-24 tracking-wide"
-    >
-      <p class="font-jetbrains text-primary text-xl">Hi, my name is</p>
-      <h1 class="font-jetbrains text-7xl font-bold">Leon Casas</h1>
-      <!-- TODO: Add a component w typing animation -->
-      <p class="font-jetbrains text-primary text-5xl font-bold">
-        I build things for the web.
-      </p>
-      <h2 class="text-text mt-2 w-1/2 text-xl font-medium break-normal">
-        I'm a software engineer specializing in building exceptional digital
-        experiences. Currently, I'm focused on creating accessible,
-        human-centered products.
-      </h2>
+    <Hero />
 
-      <Button text="Check out my work">
-        <ChevronDownIcon
-          class="text-primary mr-3 transition-all duration-300 ease-in-out group-hover:text-white"
-        />
-      </Button>
-    </section>
+    <AboutMe />
   </main>
 </Layout>

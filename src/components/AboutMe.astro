@@ -1,0 +1,85 @@
+---
+import Image from "astro/components/Image.astro";
+import Badge from "./Badge.astro";
+import CaretRight from "./icons/CaretRight.astro";
+
+const STACK = [
+  "Javascript (ES6+)",
+  "TypeScript",
+  "Node.js",
+  "Vue.js",
+  "React",
+  "Next.js",
+  "Firebase",
+  "Postgres",
+  "Docker",
+  "Git",
+];
+const ROLES = [
+  "Frontend Development",
+  "Backend Development",
+  "Full Stack Developer",
+  "UI/UX",
+];
+---
+
+<section class="text-text flex h-full w-full p-24">
+  <div class="flex w-1/2 flex-col justify-center-safe">
+    <h2 class="font-jetbrains mb-10 text-5xl">
+      <span class="text-primary font-black">//</span>
+      About me
+    </h2>
+
+    <p class="text-lg leading-7 text-pretty">
+      Hello! I&apos;m Leon, a Full Stack Developer with 2+ years of hands&#45;on
+      experience turning ideas into web applications and SaaS products. I
+      started my career at the Universidad Autónoma de Nuevo León, where I grew
+      from a junior developer into a team lead—mentoring peers, managing
+      projects, and delivering solutions that improved workflows and user
+      experiences. As a co&#45;founder of a restaurant&#45;management startup,
+      I&apos;ve worn many hats: architecting features, coordinating with
+      stakeholders, and ensuring smooth deployments. <br />This journey has
+      sharpened my problem&#45;solving, leadership, and communication skills,
+      and taught me how to guide projects from concept to launch. I&apos;m
+      passionate about collaborating with both private clients and enterprises
+      to create custom, impactful solutions. I thrive in agile teams, embrace
+      continuous learning, and always aim to exceed expectations. Let&apos;s
+      work together to bring your next project to life!
+    </p>
+
+    <h3 class="text-primary font-jetbrains mt-10 font-medium">
+      Here are a few technologies I've been working with recently:
+    </h3>
+
+    <ul
+      class="my-5 grid max-w-md list-inside grid-cols-2 grid-rows-3 space-y-1"
+    >
+      {
+        STACK.map((techStackItem) => (
+          <li class="text-text/90 flex items-center space-x-3 font-bold">
+            <CaretRight class="text-primary" />
+            <span>{techStackItem}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="flex flex-wrap space-y-2">
+      {
+        ROLES.map((role) => (
+          <Badge>
+            <em class="not-italic">{role}</em>
+          </Badge>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="flex w-1/2 items-center justify-center">
+    <img
+      src="https://ieaqnraml4.ufs.sh/f/GXuxkfX4GClDkfEowNXOzbf2lw6Brk9xUYEnqi5dsWvI3MVA"
+      alt="A photo of myself"
+      class="outline-primary size-1/2 scale-none rounded-full bg-auto outline-4 outline-offset-4"
+    />
+  </div>
+</section>
