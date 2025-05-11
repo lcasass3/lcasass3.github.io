@@ -9,3 +9,10 @@
   --color-secondary: oklch(30.81% 0.164 272.13);
   --color-accent: oklch(44.31% 0.289 266.44);
 }
+
+em {
+  font-style: normal;
+  font-weight: 700;
+  font-family: var(--font-jetbrains);
+  color: var(--color-primary);
+}
