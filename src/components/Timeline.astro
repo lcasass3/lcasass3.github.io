@@ -27,8 +27,8 @@ const { items } = Astro.props;
 
         <ul class="my-5 w-11/12 list-outside space-y-1">
           {item.experienceHighlights.map((highlight) => (
-            <li class="text-text/90 flex flex-nowrap items-start justify-start space-x-3 font-normal text-pretty">
-              <CaretRight class="text-primary size-5" />
+            <li class="text-text/90 flex space-x-3 font-normal text-pretty">
+              <CaretRight class="text-primary size-5 flex-none" />
               <span>{highlight}</span>
             </li>
           ))}
