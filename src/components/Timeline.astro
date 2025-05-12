@@ -1,0 +1,39 @@
+---
+import type { TimelineItemDTO } from "../types/TimelineItemDTO";
+import CaretRight from "./icons/CaretRight.astro";
+
+interface Props {
+  items: TimelineItemDTO[];
+}
+const { items } = Astro.props;
+---
+
+{
+  items.map((item) => (
+    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+      <li class="ms-6 mb-5">
+        <span class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
+          <item.icon />
+        </span>
+        <time class="mb-2 block text-sm leading-none font-normal text-gray-400 dark:text-gray-500">
+          {item.date}
+        </time>
+        <h3 class="mb-1 flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+          {item.title}
+        </h3>
+        <span class="text-primary font-jetbrains mb-1 block text-sm leading-none font-semibold">
+          {item.company}
+        </span>
+
+        <ul class="my-5 w-11/12 list-outside space-y-1">
+          {item.experienceHighlights.map((highlight) => (
+            <li class="text-text/90 flex flex-nowrap items-start justify-start space-x-3 font-normal text-pretty">
+              <CaretRight class="text-primary size-5" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      </li>
+    </ol>
+  ))
+}

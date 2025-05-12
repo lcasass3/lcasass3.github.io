@@ -1,0 +1,40 @@
+---
+import type { TimelineItemDTO } from "../types/TimelineItemDTO";
+import Section from "./Section.astro";
+import SectionTitle from "./SectionTitle.astro";
+import Timeline from "./Timeline.astro";
+import BuildingUniversity from "../components/icons/BuildingUniversity.astro";
+import Rocket from "./icons/Rocket.astro";
+
+const WORK_HISTORY: TimelineItemDTO[] = [
+  {
+    icon: Rocket,
+    title: "Co-founder and Software Engineer",
+    date: "May 2024 - April 2025",
+    company: "Zealix",
+    experienceHighlights: [
+      "Architected & launched a multi-tenant SaaS restaurant-management platform with NextJS 14, Tailwind CSS, Zustand and a TypeScript-based Express + Prisma/Socket.io backend—delivering MVP in 3 months and full feature set in 5 months. Achieved zero critical production bugs in first six months.",
+      "Migrated backend to AdonisJS 6 (Auth, Lucid ORM, Transmit SSE, Drive File Storage Library, SMTP mailing, Redis and multi-layer cache) and PostgreSQL + Citus—reducing AWS Aurora costs by ~80% while maintaining horizontal scalability.",
+      "Orchestrated CI/CD deployment on AWS Fargate (backend) and EC2 (Postgres+Citus), configured load-balancers and auto-scaling policies to ensure 99.9% uptime under peak loads.",
+      "Contributed to business strategy, market research and product roadmap—conducted competitive analysis, client interviews and pitched innovative features.",
+    ],
+  },
+  {
+    icon: BuildingUniversity,
+    title: "Full Stack Developer",
+    date: "May 2023 - October 2024",
+    company: "Coordinación de Aplicaciones Móviles, UANL.",
+    experienceHighlights: [
+      "Spearheaded and collaborated development of 5+ web/mobile apps with Vue.js, TypeScript, Tailwind CSS & Firebase, cutting manual workflows by 40%.",
+      "Served as Product Manager & Scrum Master: led agile processes, client discovery sessions and backlog grooming; guided 20+ junior developers through sprints, code reviews and one-on-one technical coaching.",
+      "Architected Dockerized AdonisJS 6/PostgreSQL services on DigitalOcean, boosting deployment reliability by 80%.",
+      "Integrated UANL's SIASE SOAP API for student session management, achieving 99.9% data-sync accuracy.",
+    ],
+  },
+];
+---
+
+<Section>
+  <SectionTitle>Experience</SectionTitle>
+  <Timeline items={WORK_HISTORY} />
+</Section>
