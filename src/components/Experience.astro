@@ -5,6 +5,7 @@ import SectionTitle from "./SectionTitle.astro";
 import Timeline from "./Timeline.astro";
 import BuildingUniversity from "../components/icons/BuildingUniversity.astro";
 import Rocket from "./icons/Rocket.astro";
+import Certificate from "./icons/Certificate.astro";
 
 const WORK_HISTORY: TimelineItemDTO[] = [
   {
@@ -29,6 +30,18 @@ const WORK_HISTORY: TimelineItemDTO[] = [
       "Served as Product Manager & Scrum Master: led agile processes, client discovery sessions and backlog grooming; guided 20+ junior developers through sprints, code reviews and one-on-one technical coaching.",
       "Architected Dockerized AdonisJS 6/PostgreSQL services on DigitalOcean, boosting deployment reliability by 80%.",
       "Integrated UANL's SIASE SOAP API for student session management, achieving 99.9% data-sync accuracy.",
+    ],
+  },
+  {
+    icon: Certificate,
+    title: "Technical Mentor, Scrum Master & Product Lead ",
+    date: "Jan 2023 - October 2024",
+    company: "FIME DevZone Bootcamp, UANL",
+    experienceHighlights: [
+      "Organized and delivered three editions of a 6-week web-dev bootcamp for 25+ students each, teaching HTML & CSS & TypeScript, Vue 3 and Firebase fundamentals.",
+      "Led these junior-dev teams (up to 25 simultaneous participants) as Scrum Master and Product Manager, running sprints, daily stand-ups, backlog grooming and one-on-one technical coaching.",
+      "Mentored participants through code reviews, paired programming and agile best practices, achieving a 90% project completion rate and producing deployable features for the university’s apps.",
+      "Advised the Coordination Director on high-potential talent; several bootcamp alumni were formally hired into developer roles.",
     ],
   },
 ];
