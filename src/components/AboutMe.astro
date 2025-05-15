@@ -28,13 +28,15 @@ const ROLES = [
   <div class="flex w-1/2 flex-col justify-center-safe">
     <SectionTitle>About me</SectionTitle>
     <p class="text-lg leading-7 text-pretty">
-      Hello! I&apos;m Leon, a <em>Full Stack Developer</em> with 2+ years of hands&#45;on
-      experience turning ideas into web applications and SaaS products. I started
-      my career at the Universidad Autónoma de Nuevo León, where I grew from a junior
-      developer into a team lead—mentoring peers, managing projects, and delivering
-      solutions that improved workflows and user experiences. As a co&#45;founder
-      of a restaurant&#45;management startup, I&apos;ve worn many hats: architecting
-      features, coordinating with stakeholders, and ensuring smooth deployments.
+      Hello! I&apos;m Leon, a <em>Full Stack Developer</em> with <span
+        id="experience-years"></span>+ years of hands&#45;on experience turning
+      ideas into web applications and SaaS products. I started my career at the
+      Universidad Autónoma de Nuevo León, where I grew from a junior developer
+      into a team lead—mentoring peers, managing projects, and delivering
+      solutions that improved workflows and user experiences. As a
+      co&#45;founder of a restaurant&#45;management startup, I&apos;ve worn many
+      hats: architecting features, coordinating with stakeholders, and ensuring
+      smooth deployments.
       <br />This journey has sharpened my <em
         >problem&#45;solving, leadership, and communication skills</em
       >, and taught me how to guide projects from concept to launch. I&apos;m
@@ -79,6 +81,14 @@ const ROLES = [
     />
   </div>
 </Section>
+
+<script>
+  const experienceYears =
+    new Date().getUTCFullYear() - new Date("2023-01-01").getUTCFullYear();
+
+  document.getElementById("experience-years")!.textContent =
+    experienceYears.toString();
+</script>
 
 <style>
   p em {
