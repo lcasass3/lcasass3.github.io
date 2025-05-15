@@ -1,0 +1,103 @@
+---
+import MailIcon from "./icons/Mail.astro";
+import MapPinIcon from "./icons/MapPin.astro";
+import PdfIcon from "./icons/Pdf.astro";
+import DownloadIcon from "./icons/Download.astro";
+import GithubIcon from "./icons/Github.astro";
+import Section from "./Section.astro";
+import SectionTitle from "./SectionTitle.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+import InstagramIcon from "./icons/Instagram.astro";
+
+const CONTACT_LINKS = [
+  { path: "https://github.com/lcasass3", label: "GitHub", icon: GithubIcon },
+  {
+    path: "https://www.linkedin.com/in/leon-casas-187504266/",
+    label: "LinkedIn",
+    icon: LinkedinIcon,
+  },
+  {
+    path: "https://www.instagram.com/lcasas_3/",
+    label: "Instagram",
+    icon: InstagramIcon,
+  },
+];
+---
+
+<Section>
+  <SectionTitle>Get in touch</SectionTitle>
+  <p class="text-text text-lg">
+    I'm currently open to new opportunities. Whether you have a question or just
+    want to say hi, I'll try my best to get back to you!
+  </p>
+
+  <div class="mt-5 grid grid-cols-2 text-lg">
+    <div class="flex flex-col space-y-10">
+      <div class="flex items-center space-x-3">
+        <MailIcon class="text-primary size-8" />
+        <div>
+          <p class="font-jetbrains">Email</p>
+          <a
+            href="mailto:leonn.casass@gmail.com"
+            class="hover:text-primary group flex flex-col transition-colors duration-200 ease-in-out"
+            >leonn.casass@gmail.com
+            <span
+              class="bg-primary h-0.5 w-0 transform transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <MapPinIcon class="text-primary size-8" />
+        <div>
+          <p class="font-jetbrains">Location</p>
+          <p>Monterrey, MX</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <PdfIcon class="text-primary size-8" />
+        <div>
+          <p class="font-jetbrains">Resume</p>
+          <!-- TODO: Dynamic pdf lang -->
+          <a
+            href="/cv-en.pdf"
+            class="text-primary flex cursor-pointer items-center font-bold"
+            >Download CV<DownloadIcon
+              class="text-primary ml-3 size-5 animate-bounce"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="font-jetbrains mb-10 text-lg">Connect with me</p>
+      <ul class="grid gap-y-10">
+        {
+          CONTACT_LINKS.map((contact) => (
+            <li class="cursor-pointer">
+              <a
+                href={contact.path}
+                aria-label={contact.label}
+                class="group flex space-x-3"
+              >
+                <contact.icon class="text-text group-hover:text-primary size-6 transition-colors duration-200 ease-in-out" />
+                <span class="group-hover:text-primary transition-colors duration-200 ease-in-out">
+                  {contact.label}
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</Section>
+
+<style>
+  section {
+    height: 75%;
+  }
+</style>
