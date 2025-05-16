@@ -38,6 +38,7 @@ const CONTACT_LINKS = [
         <div>
           <p class="font-jetbrains">Email</p>
           <a
+            target="_blank"
             href="mailto:leonn.casass@gmail.com"
             class="hover:text-primary group flex flex-col transition-colors duration-200 ease-in-out"
             >leonn.casass@gmail.com
@@ -62,6 +63,7 @@ const CONTACT_LINKS = [
           <p class="font-jetbrains">Resume</p>
           <!-- TODO: Dynamic pdf lang -->
           <a
+            target="_blank"
             href="/cv-en.pdf"
             class="text-primary flex cursor-pointer items-center font-bold"
             >Download CV<DownloadIcon
@@ -79,6 +81,7 @@ const CONTACT_LINKS = [
           CONTACT_LINKS.map((contact) => (
             <li class="cursor-pointer">
               <a
+                target="_blank"
                 href={contact.path}
                 aria-label={contact.label}
                 class="group flex space-x-3"
