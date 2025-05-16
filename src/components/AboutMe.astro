@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
 import CaretRightIcon from "./icons/CaretRight.astro";
 import Section from "./Section.astro";
@@ -74,9 +75,10 @@ const ROLES = [
   </div>
 
   <div class="flex w-1/2 items-center justify-center">
-    <img
+    <Image
       src="https://ieaqnraml4.ufs.sh/f/GXuxkfX4GClDkfEowNXOzbf2lw6Brk9xUYEnqi5dsWvI3MVA"
-      alt="A photo of myself"
+      inferSize
+      alt="Myself"
       class="outline-primary size-1/2 scale-none rounded-full bg-auto object-cover shadow-2xl outline-4 outline-offset-4"
     />
   </div>
