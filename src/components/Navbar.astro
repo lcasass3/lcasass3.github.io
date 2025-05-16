@@ -6,6 +6,8 @@ import MailIcon from "./icons/Mail.astro";
 import GithubIcon from "./icons/Github.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
 import LionHeadIcon from "./icons/LionHead.astro";
+import HamburgerIcon from "./icons/Hamburger.astro";
+import CloseIcon from "./icons/Close.astro";
 
 import Route from "./navbar/Route.astro";
 import type { RouteDTO } from "../types/RouteDTO";
@@ -33,9 +35,35 @@ const CONTACT_ROUTES: RouteDTO[] = [
 ];
 ---
 
-<nav
-  class="bg-background border-r-primary/80 fixed left-0 flex h-screen w-20 flex-col justify-between border-r py-20"
+<!-- Mobile hamburger button -->
+<button
+  id="mobile-menu-toggle"
+  class="bg-background text-text hover:text-primary fixed top-5 left-5 z-50 block rounded-md p-2 md:hidden"
+  aria-label="Toggle menu"
 >
+  <HamburgerIcon class="size-8" />
+</button>
+
+<!-- Mobile navigation overlay -->
+<div
+  id="nav-overlay"
+  class="bg-background/70 fixed inset-0 z-40 hidden backdrop-blur-sm transition-all duration-300 ease-in-out"
+>
+</div>
+
+<!-- Navigation sidebar -->
+<nav
+  id="main-nav"
+  class="bg-background border-r-primary/80 fixed left-0 z-50 flex h-full w-20 -translate-x-full flex-col justify-between border-r py-20 transition-transform duration-300 ease-in-out md:translate-x-0"
+>
+  <button
+    id="mobile-menu-close"
+    class="text-text hover:text-primary absolute top-4 right-4 md:hidden"
+    aria-label="Close menu"
+  >
+    <CloseIcon class="size-6" />
+  </button>
+
   <ul class="grid w-full justify-center gap-y-16">
     {ROUTES.map((route) => <Route route={route} />)}
   </ul>
@@ -46,10 +74,37 @@ const CONTACT_ROUTES: RouteDTO[] = [
 </nav>
 
 <script>
+  // Routes highlighting
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section");
     const navItems = document.querySelectorAll("nav ul li a");
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+    const mainNav = document.getElementById("main-nav");
+    const navOverlay = document.getElementById("nav-overlay");
 
+    // Mobile menu toggle functionality
+    const toggleMobileMenu = () => {
+      mainNav?.classList.toggle("-translate-x-full");
+      navOverlay?.classList.toggle("hidden");
+      document.body.classList.toggle("overflow-hidden");
+    };
+
+    mobileMenuToggle?.addEventListener("click", toggleMobileMenu);
+    mobileMenuClose?.addEventListener("click", toggleMobileMenu);
+    navOverlay?.addEventListener("click", toggleMobileMenu);
+
+    // Close menu when clicking on a nav item on mobile
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        if (window.innerWidth < 768) {
+          // md breakpoint
+          toggleMobileMenu();
+        }
+      });
+    });
+
+    // Section highlighting
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -71,12 +126,10 @@ const CONTACT_ROUTES: RouteDTO[] = [
       rootMargin: "0px",
       threshold: 0.3,
     });
-
     sections.forEach((section) => {
       observer.observe(section);
     });
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect();
