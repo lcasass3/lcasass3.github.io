@@ -24,10 +24,10 @@ const ROLES = [
 ];
 ---
 
-<Section id="about-me" class="flex">
-  <div class="flex w-1/2 flex-col justify-center-safe">
+<Section id="about-me" class="flex flex-col md:flex-row">
+  <div class="mb-10 flex w-full flex-col justify-center-safe md:mb-0 md:w-1/2">
     <SectionTitle>About me</SectionTitle>
-    <p class="text-lg leading-7 text-pretty">
+    <p class="text-base leading-7 text-pretty md:text-lg">
       Hello! I&apos;m Leon, a <em>Full Stack Developer</em> with <span
         id="experience-years"></span>+ years of hands&#45;on experience turning
       ideas into web applications and SaaS products. I started my career at the
@@ -46,11 +46,14 @@ const ROLES = [
       work together to bring your next project to life!
     </p>
 
-    <h3 class="text-primary font-jetbrains mt-10 text-lg font-medium">
+    <h3
+      class="text-primary font-jetbrains mt-10 text-base font-medium md:text-lg"
+    >
       Here are a few technologies I've been working with recently:
     </h3>
+
     <ul
-      class="my-5 grid max-w-md list-inside grid-cols-2 grid-rows-3 space-y-1"
+      class="my-5 grid max-w-md list-inside grid-cols-1 space-y-1 sm:grid-cols-2"
     >
       {
         STACK.map((techStackItem) => (
@@ -62,7 +65,7 @@ const ROLES = [
       }
     </ul>
 
-    <div class="flex flex-wrap space-y-2">
+    <div class="flex flex-wrap gap-2">
       {
         ROLES.map((role) => (
           <Badge>
@@ -73,12 +76,18 @@ const ROLES = [
     </div>
   </div>
 
-  <div class="flex w-1/2 items-center justify-center">
-    <img
-      src="https://ieaqnraml4.ufs.sh/f/GXuxkfX4GClDkfEowNXOzbf2lw6Brk9xUYEnqi5dsWvI3MVA"
-      alt="Myself"
-      class="outline-primary size-1/2 scale-none rounded-full bg-auto object-cover shadow-2xl outline-4 outline-offset-4"
-    />
+  <div class="flex w-full items-center justify-center md:w-1/2">
+    <div class="relative">
+      <div
+        class="bg-primary/30 absolute inset-0 animate-pulse rounded-full blur-md"
+      >
+      </div>
+      <img
+        src="https://ieaqnraml4.ufs.sh/f/GXuxkfX4GClDkfEowNXOzbf2lw6Brk9xUYEnqi5dsWvI3MVA"
+        alt="Myself"
+        class="border-primary relative aspect-square w-full max-w-xs transform rounded-full border-2 object-cover shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl sm:max-w-sm md:max-w-md"
+      />
+    </div>
   </div>
 </Section>
 
@@ -89,9 +98,3 @@ const ROLES = [
   document.getElementById("experience-years")!.textContent =
     experienceYears.toString();
 </script>
-
-<style>
-  p em {
-    margin: 0px 5px;
-  }
-</style>

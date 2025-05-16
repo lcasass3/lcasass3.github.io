@@ -9,7 +9,10 @@ const { id, class: className } = Astro.props;
 <!-- TODO: Add data-sections -->
 <section
   id={id}
-  class:list={["text-text h-screen md:px-40 md:py-24", className]}
+  class:list={[
+    "text-text h-auto min-h-screen px-5 py-20 md:px-40 md:py-24",
+    className,
+  ]}
 >
   <slot />
 </section>

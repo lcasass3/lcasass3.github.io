@@ -12,9 +12,18 @@ const { route } = Astro.props;
     target={route.targetBlank ? "_blank" : "_self"}
     href={route.path}
     aria-label={route.label}
+    class="group relative flex items-center md:justify-center"
   >
     <route.icon
-      class="text-text hover:text-primary size-6 transition-colors duration-200 ease-in-out"
+      class="text-text group-hover:text-primary size-6 transition-colors duration-200 ease-in-out"
     />
+    <span
+      class="text-text group-hover:text-primary relative ml-4 capitalize transition-colors duration-200 ease-in-out md:hidden"
+    >
+      {route.label.replace("-", " ")}
+      <span
+        class="bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full"
+      ></span>
+    </span>
   </a>
 </li>

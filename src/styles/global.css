@@ -14,18 +14,18 @@
 
   /* animations variables */
   --animate-typewriter-cursor: typewriter-cursor-pulse 1s ease-in-out infinite;
+}
 
-  /* animations */
-  @keyframes typewriter-cursor-pulse {
-    0%,
-    100% {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1);
-    }
+/* animations */
+@keyframes typewriter-cursor-pulse {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -58,4 +58,37 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+/* Responsive utilities */
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Add responsive padding for mobile devices */
+@media (max-width: 768px) {
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Ensure text is readable on smaller screens */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Improve touch targets on mobile */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Utility for vertical centering that works on mobile */
+.justify-center-safe {
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
 }

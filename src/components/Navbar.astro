@@ -38,10 +38,10 @@ const CONTACT_ROUTES: RouteDTO[] = [
 <!-- Mobile hamburger button -->
 <button
   id="mobile-menu-toggle"
-  class="bg-background text-text hover:text-primary fixed top-5 left-5 z-50 block rounded-md p-2 md:hidden"
+  class="bg-background text-text hover:text-primary fixed top-4 left-4 z-50 block rounded-md p-2 shadow-md md:hidden"
   aria-label="Toggle menu"
 >
-  <HamburgerIcon class="size-8" />
+  <HamburgerIcon class="size-6 sm:size-8" />
 </button>
 
 <!-- Mobile navigation overlay -->
@@ -54,7 +54,7 @@ const CONTACT_ROUTES: RouteDTO[] = [
 <!-- Navigation sidebar -->
 <nav
   id="main-nav"
-  class="bg-background border-r-primary/80 fixed left-0 z-50 flex h-full w-20 -translate-x-full flex-col justify-between border-r py-20 transition-transform duration-300 ease-in-out md:translate-x-0"
+  class="bg-background border-r-primary/80 fixed left-0 z-50 flex h-full w-60 -translate-x-full flex-col justify-between border-r py-20 transition-transform duration-300 ease-in-out sm:w-72 md:w-20 md:translate-x-0"
 >
   <button
     id="mobile-menu-close"
@@ -64,11 +64,13 @@ const CONTACT_ROUTES: RouteDTO[] = [
     <CloseIcon class="size-6" />
   </button>
 
-  <ul class="grid w-full justify-center gap-y-16">
+  <ul class="grid w-full justify-center gap-y-10 md:gap-y-16">
     {ROUTES.map((route) => <Route route={route} />)}
   </ul>
 
-  <ul class="bottom-0 grid w-full justify-center gap-y-16">
+  <ul
+    class="bottom-0 grid w-full justify-center gap-y-8 pb-4 md:gap-y-16 md:pb-0"
+  >
     {CONTACT_ROUTES.map((route) => <Route route={route} />)}
   </ul>
 </nav>

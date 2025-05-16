@@ -13,20 +13,23 @@ const typewriterOptions = {
   autoStart: true,
   loop: true,
   wrapperClassName:
-    "font-jetbrains text-primary text-5xl font-bold tracking-normal",
-  cursorClassName: "text-5xl text-primary animate-typewriter-cursor",
+    "font-jetbrains text-primary text-3xl md:text-5xl font-bold tracking-normal",
+  cursorClassName:
+    "text-3xl md:text-5xl text-primary animate-typewriter-cursor",
 };
 ---
 
 <Section
   id="hero"
-  class="flex flex-col justify-center-safe space-y-3 tracking-wide"
+  class="flex flex-col justify-center-safe space-y-3 px-6 tracking-wide sm:px-10"
 >
-  <p class="font-jetbrains text-primary text-xl">Hi, my name is</p>
-  <h1 class="font-jetbrains text-7xl font-bold">Leon Casas</h1>
+  <p class="font-jetbrains text-primary text-base md:text-xl">Hi, my name is</p>
+  <h1 class="font-jetbrains text-4xl font-bold md:text-7xl">Leon Casas</h1>
   <Typewriter options={typewriterOptions} client:load />
 
-  <h2 class="text-text mt-2 w-1/2 text-xl font-medium break-normal">
+  <h2
+    class="text-text mt-2 w-full text-base font-medium break-normal md:w-1/2 md:text-xl"
+  >
     I turn your ideas into powerful, efficient web applications. From sleek
     landing pages to large&#45;scale SaaS platforms, I deliver fast, reliable,
     and tailor&#45;made solutions that fit your needs. Ready to take your
