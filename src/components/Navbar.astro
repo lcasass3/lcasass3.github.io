@@ -16,17 +16,23 @@ const ROUTES: RouteDTO[] = [
   { path: "/#contact", label: "contact", icon: MailIcon },
 ];
 const CONTACT_ROUTES: RouteDTO[] = [
-  { path: "https://github.com/lcasass3", label: "github", icon: GithubIcon },
+  {
+    path: "https://github.com/lcasass3",
+    label: "github",
+    icon: GithubIcon,
+    targetBlank: true,
+  },
   {
     path: "https://www.linkedin.com/in/leon-casas-187504266/",
     label: "linkedIn",
     icon: LinkedinIcon,
+    targetBlank: true,
   },
 ];
 ---
 
 <nav
-  class="bg-background border-r-primary/80 relative left-0 flex h-full flex-col justify-between border-r px-8 py-20"
+  class="bg-background border-r-primary/80 fixed left-0 flex h-screen w-20 flex-col justify-between border-r py-20"
 >
   <ul class="grid w-full justify-center gap-y-16">
     {ROUTES.map((route) => <Route route={route} />)}
