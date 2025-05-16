@@ -44,3 +44,47 @@ const CONTACT_ROUTES: RouteDTO[] = [
     {CONTACT_ROUTES.map((route) => <Route route={route} />)}
   </ul>
 </nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("nav ul li a");
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.querySelector("svg")!.classList.remove("text-text");
+              item.querySelector("svg")!.classList.add("text-primary");
+            } else {
+              item.querySelector("svg")!.classList.remove("text-primary");
+              item.querySelector("svg")!.classList.add("text-text");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
