@@ -53,3 +53,9 @@ html {
   border: 3px solid var(--color-background);
   border-radius: 10px;
 }
+
+@media (prefers-reduced-motion) {
+  html {
+    scroll-behavior: auto;
+  }
+}
