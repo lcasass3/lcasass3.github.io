@@ -2,8 +2,9 @@
 interface Props {
   text: string;
   variant?: "primary" | "secondary";
+  href?: string;
 }
-const { text, variant = "primary" } = Astro.props;
+const { text, variant = "primary", href = Astro.routePattern } = Astro.props;
 
 const stylesMap = {
   primary:
@@ -12,13 +13,15 @@ const stylesMap = {
 };
 ---
 
-<button
-  type="button"
-  class:list={[
-    "group mt-2 flex w-fit cursor-pointer items-center rounded-md px-8 py-4 text-lg",
-    stylesMap[variant],
-  ]}
->
-  <slot />
-  {text}
-</button>
+<a href={href} aria-label="">
+  <button
+    type="button"
+    class:list={[
+      "group mt-2 flex w-fit cursor-pointer items-center rounded-md px-8 py-4 text-lg",
+      stylesMap[variant],
+    ]}
+  >
+    <slot />
+    {text}
+  </button>
+</a>
