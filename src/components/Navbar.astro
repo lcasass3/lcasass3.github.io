@@ -1,15 +1,17 @@
 ---
 import UserIcon from "./icons/User.astro";
 import BriefcaseIcon from "./icons/Briefcase.astro";
-import CodeIcon from "./icons/Code.astro";
+// import CodeIcon from "./icons/Code.astro";
 import MailIcon from "./icons/Mail.astro";
 import GithubIcon from "./icons/Github.astro";
 import LinkedinIcon from "./icons/Linkedin.astro";
+import LionHeadIcon from "./icons/LionHead.astro";
 
 import Route from "./navbar/Route.astro";
 import type { RouteDTO } from "../types/RouteDTO";
 
 const ROUTES: RouteDTO[] = [
+  { path: "/#hero", label: "hero", icon: LionHeadIcon },
   { path: "/#about-me", label: "about-me", icon: UserIcon },
   { path: "/#experience", label: "experience", icon: BriefcaseIcon },
   // { path: "/#jobs", label: "jobs", icon: CodeIcon },

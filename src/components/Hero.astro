@@ -18,7 +18,10 @@ const typewriterOptions = {
 };
 ---
 
-<Section class="flex flex-col justify-center-safe space-y-3 tracking-wide">
+<Section
+  id="hero"
+  class="flex flex-col justify-center-safe space-y-3 tracking-wide"
+>
   <p class="font-jetbrains text-primary text-xl">Hi, my name is</p>
   <h1 class="font-jetbrains text-7xl font-bold">Leon Casas</h1>
   <Typewriter options={typewriterOptions} client:load />
