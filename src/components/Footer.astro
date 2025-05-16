@@ -1,0 +1,21 @@
+---
+import AstroIcon from "./icons/AstroIcon.astro";
+---
+
+<footer class="bottom-0 w-full bg-gray-950 py-6 text-gray-500">
+  <div class="container mx-auto px-8 md:px-16 lg:px-24">
+    <div class="flex flex-col items-center">
+      <p class="font-jetbrains mb-2 flex text-sm">
+        Designed &amp; Built by Leon Casas in <AstroIcon class="ml-3 size-5" />
+      </p>
+      <p class="font-jetbrains text-sm">
+        © <span id="current-year"></span> All Rights Reserved
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const currentYear = new Date().getFullYear();
+  document.getElementById("current-year")!.textContent = currentYear.toString();
+</script>
