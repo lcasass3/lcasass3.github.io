@@ -40,6 +40,7 @@ em {
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-slate-700) var(--color-background);
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar {
   width: 12px;
