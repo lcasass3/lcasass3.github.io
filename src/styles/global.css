@@ -1,13 +1,32 @@
 @import "tailwindcss";
 
 @theme {
+  /* fonts variables */
   --font-sans: "Poppins", "sans-serif";
   --font-jetbrains: "JetBrains Mono Variable", monospace;
+
+  /* colors variables */
   --color-background: rgba(15, 23, 42, 1);
   --color-text: oklch(92.61% 0.005 286.29);
   --color-primary: oklch(72.36% 0.091 284.62);
   --color-secondary: oklch(30.81% 0.164 272.13);
   --color-accent: oklch(44.31% 0.289 266.44);
+
+  /* animations variables */
+  --animate-typewriter-cursor: typewriter-cursor-pulse 1s ease-in-out infinite;
+
+  /* animations */
+  @keyframes typewriter-cursor-pulse {
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
 
 em {
