@@ -112,11 +112,27 @@ const CONTACT_ROUTES: RouteDTO[] = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
+              // Highlight icon
               item.querySelector("svg")!.classList.remove("text-text");
               item.querySelector("svg")!.classList.add("text-primary");
+
+              // Highlight text in mobile view if span exists
+              const textSpan = item.querySelector("span");
+              if (textSpan) {
+                textSpan.classList.remove("text-text");
+                textSpan.classList.add("text-primary");
+              }
             } else {
+              // Reset icon
               item.querySelector("svg")!.classList.remove("text-primary");
               item.querySelector("svg")!.classList.add("text-text");
+
+              // Reset text in mobile view if span exists
+              const textSpan = item.querySelector("span");
+              if (textSpan) {
+                textSpan.classList.remove("text-primary");
+                textSpan.classList.add("text-text");
+              }
             }
           });
         }
