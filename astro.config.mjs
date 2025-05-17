@@ -11,4 +11,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [react()],
+  site: "https://lcasass3.github.io",
 });
